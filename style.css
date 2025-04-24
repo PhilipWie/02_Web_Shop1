@@ -7,16 +7,27 @@
 body,html {
   height: 100%;
   background-color: rgb(198, 217, 231);
+  display: flex;
+  flex-direction: column;
 }
-
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  margin-top: auto;
+}
 .header {
   text-align: center;
-  position: absolute;
+  position: relative;
   background-color: rgb(173, 191, 231);
   font-size: 300%;
   width: 100%;
   height: 100px;
   padding: 1%;
+  margin-top: 50px;
+  margin-bottom: 1px;
 }
 .obere_leiste {
   text-align: center;
@@ -24,14 +35,19 @@ body,html {
   background-color: #5a88ae;
   color: white;
   top: 0;
+  font-size: large;
   position: fixed;
   padding: 0.7em 1.25em;
   width: 100%;
+  height: 50px;
+  z-index: 1;
 }
 .divProdukt {
   width: 25%;
   min-height: 400px;
+  max-height: 570px;
   min-width: 400px;
+  max-width: 450px;
   margin: 2% 2% 2% 2%;
   justify-content: space-between;
   padding: 20px;
@@ -43,9 +59,16 @@ body,html {
 .prod-button {
   border-radius: 25px;
   color: white;
-  width: 23%;
+  width: 30%;
   height: 5%;
   color: black;
+  padding: 1px;
+}
+.prod-button:hover{
+  text-decoration: underline;
+  color: blue;
+  transition: padding 1s;
+  padding: 20px;
 }
 input.reg-submit {
   border-radius: 25px;
@@ -59,12 +82,6 @@ input.reg-submit {
 img.prod-img1 {
   height: 100%;
   width: 80%;
-}
-.divrechts {
-  float: left;
-  color: blue;
-  width: 49%;
-  border: 2px solid black;
 }
 .divProdBild {
   width: 100%;
@@ -83,14 +100,12 @@ img.prod-img1 {
   background-color: rgb(177, 204, 248);
   bottom: 0;
   width: 100%;
-  position: fixed;
+  position: relative;
+  margin-top: auto;
+  z-index: 1;
 }
 hr.Footer {
   border: 1px solid black;
   width: 100%;
 }
-.container {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
+
