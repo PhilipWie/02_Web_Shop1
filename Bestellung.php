@@ -26,10 +26,8 @@
         include('zugriff.inc');
         $conn = mysqli_connect($host, $user, $password, $db) or die('Conn Dead');
 		
-		$knr = $_SESSION['K_Nr'];
-		
-		Echo "$knr";
         if (isset($_SESSION['email'])) {
+            $knr = $_SESSION['K_Nr'];
 			if(isset($_POST['subm_Bst'])) {
             //neue Bst_Nr generieren
             $query = "Select Max(Bst_Nr) as max_kn from bestellungen";
@@ -81,7 +79,6 @@ mysqli_close($conn);
         ?>
     </div>
     <footer class="Footer">
-        <hr>
         <p>
             &copy; Alle Rechte vorbehalten
         </p>

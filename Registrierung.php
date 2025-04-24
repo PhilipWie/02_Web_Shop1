@@ -19,8 +19,9 @@
         </nav>
 		
         </div>
-		 <div class="container">
         <h1 class="header">Anmeldung / Registrierung</h1>
+		 <div class="container">
+        
         <?php if (isset($_SESSION['email'])): ?>
             <h2>Sie sind angemeldet als </h2>
             <form action="KndRegist.php" method="Post">
@@ -65,7 +66,6 @@
 </div>
 <?php endif; ?>
 <footer class="Footer">
-    <hr>
     <p>
         &copy; Alle Rechte vorbehalten
     </p>

@@ -18,10 +18,8 @@
             <a href="Registrierung.php">Anmeldung / Registrierung</a> |
         </nav>
     </div>
-	<h1 class="header">Handy Laden</h1>
+    <h1 class="header">Handy Laden</h1>
     <div class="container">
-        
-
         <?php
         include("zugriff.inc");
         $conn = mysqli_connect($host, $user, $password, $db) or die("conn dead");
@@ -32,7 +30,7 @@
             $name = $daten->Pr_Name;
             $preis = $daten->Pr_Preis;
             $bst = $daten->Pr_Lagerbst;
-            $bild = $daten->Pr_bild;
+            $bild = $daten->P_bildPfad;
             $id = $daten->Pr_Nr;
 
 
@@ -54,23 +52,21 @@
             echo "</select>";
 
             echo "<br><br>
-    <button type='submit' name='subm_Bst' value='$id' >Bestellen</button>
+    <button type='submit' class='prod-button' name='subm_Bst' value='$id' >Bestellen</button>
 	</form>";
 
             echo "</div>";
         }
         mysqli_close($conn);
         ?>
-    </div>
+     </div>
 
-
-    <br>
-    <br>
     <footer class="Footer">
         <p>
             &copy; Alle Rechte vorbehalten
         </p>
     </footer>
+   
 </body>
 
 </html>
