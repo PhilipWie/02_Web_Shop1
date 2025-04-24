@@ -67,8 +67,6 @@ body,html {
 .prod-button:hover{
   text-decoration: underline;
   color: blue;
-  transition: padding 1s;
-  padding: 20px;
 }
 input.reg-submit {
   border-radius: 25px;
@@ -104,8 +102,5 @@ img.prod-img1 {
   margin-top: auto;
   z-index: 1;
 }
-hr.Footer {
-  border: 1px solid black;
-  width: 100%;
-}
+
 

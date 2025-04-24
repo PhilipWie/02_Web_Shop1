@@ -3,7 +3,7 @@ session_start();
   include('zugriff.inc');
   $conn = mysqli_connect($host, $user, $password, $db) or die('Conn Dead');
 $regORan = $_POST['action'];
-$abme = $_POST['abmelden'];
+//$abme = $_POST['abmelden'];
 if($regORan == 'anmeldung'){
     anmeldung($conn);
 }else if($regORan == 'registrierung'){
@@ -13,7 +13,9 @@ if($regORan == 'anmeldung'){
     session_destroy();
     echo "Sie wurden abgemeldet";
     echo "<form action='Registrierung.php'> <h2>Melden sie
-    sich hier an</h2>"; 
+    sich hier an</h2><br>
+    <input type='submit' value='Anmelden'>
+    </form>"; 
 }
   mysqli_close($conn);
 
@@ -29,12 +31,14 @@ function anmeldung($conn){
     $K_Vorname = $daten-> K_Vorname;
     
     if($K_Nr != null){
-        echo "Anmeldung erfolgreich";
+        echo "<h3>Anmeldung erfolgreich</h3>";
+        echo "<a href='Hauptseite.php'><b>Kehren Sie zur Hauptseite zurück!</b></a>";
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $K_Vorname;
         $_SESSION['K_Nr'] = $K_Nr;
     }else{
         echo "Anmeldung fehlgeschlagen";
+        echo "<a href='Hauptseite.php'><b>Kehren Sie zur Hauptseite zurück!</b></a>";
     }
 }
 function registrierung($conn){
